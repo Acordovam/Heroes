@@ -2,5 +2,5 @@
 <hr>
 <h5 *ngIf="!heroes.length" class="text-center" >No se han encontrado datos sobre: {{busqueda}}</h5>
 <div class="card-columns">
-  <app-heroe-tarjeta (click)="verHeroe(i)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i =index"></app-heroe-tarjeta>
+  <app-heroe-tarjeta (click)="verHeroe(heroe.idx)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i =index"></app-heroe-tarjeta>
 </div>
