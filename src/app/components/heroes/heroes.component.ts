@@ -14,9 +14,10 @@ export class HeroesComponent implements OnInit {
               private router: Router) {}
   ngOnInit(): void {
     this.heroes = this._heroesService.getHeroes();
-    console.log(this.heroes);
   }
   // tslint:disable-next-line:typedef
-
+  verHeroe( idx: number): void {
+    this.router.navigate( ['/heroe', idx] );
+  }
 
 }

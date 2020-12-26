@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {HeroesService} from '../../servicios/heroes.service';
 import {Router} from '@angular/router';
 @Component({
@@ -9,14 +9,17 @@ import {Router} from '@angular/router';
 export class HeroeTarjetaComponent implements OnInit {
 @Input() heroe: any = {};
 @Input() index: number;
+@Output() heroeSeleccionado: EventEmitter<number>;
   // tslint:disable-next-line:variable-name
   constructor(private _heroesService: HeroesService,
-              private router: Router) { }
+              private router: Router) {
+    this.heroeSeleccionado = new EventEmitter();
+  }
 
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  verHeroe( ) {
-    this.router.navigate( ['/heroe', this.index] );
-  }
+   verHeroe( ) {
+    this.heroeSeleccionado.emit(this.index);
+   }
 }
