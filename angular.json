@@ -89,7 +89,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/js/jquery.slim.js"
+            ]
           }
         },
         "lint": {
@@ -120,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "spa"
+  "defaultProject": "spa",
+  "cli": {
+    "analytics": "137b6e2f-9169-49ab-afed-e61bc44c804d"
+  }
 }
